@@ -18,7 +18,7 @@ def calculate_brightness(video_path):
             break
         
         #Get mean of red channel as brightness
-        brightness.append(np.mean(frame[:,:,2])
+        brightness.append(np.mean(frame[:,:,2]))
        
     #Release video
     video.release()
