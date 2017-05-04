@@ -1,4 +1,6 @@
 from scipy import signal
+from numpy import fft
+import scipy.fftpack
 import numpy as np
 import video
 import matplotlib.pyplot as plt
@@ -18,9 +20,14 @@ def filter_brightness(brightness, FPS):
 
     return filtered
 
-if __name__=='__main__':
-    brightness, FPS = video.calculate_brightness('data/video.mp4')
-    filtered_brightness = filter_brightness(brightness, FPS)
-    plt.plot(filtered_brightness)
-    plt.show()
-    
+def FFT(brightness, inc = 1):
+    fft_amp = abs(fft.fft(brightness, inc*brightness.shape[0]))
+    return fft_amp[0:fft_amp.shape[0]//2]
+
+def find_peak(array):
+    m = 0
+    for i in range(array.shape[0]):
+        if(array[i] > array[m]):
+            m=i
+    return m
+
