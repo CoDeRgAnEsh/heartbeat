@@ -5,3 +5,6 @@ __pycache__
 
 #data folder
 data/
+
+#VIM files
+*.swp
