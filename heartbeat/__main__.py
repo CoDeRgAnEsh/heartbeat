@@ -1,6 +1,6 @@
 import sys
 import video
-from processing import *
+import processing
 
 def main(): 
     if(len(sys.argv) < 2):
@@ -8,8 +8,8 @@ def main():
         return 
 
     brightness, FPS = video.calculate_brightness(sys.argv[1])
-    filtered_brightness = filter_brightness(brightness, FPS)
-    i = brightness_FFT(filtered_brightness[0:int(6*FPS)])
+    filtered_brightness = processing.filter_brightness(brightness, FPS)
+    i = processing.brightness_FFT(filtered_brightness[0:int(6*FPS)])
     print(i)
 
 if __name__ == '__main__':
