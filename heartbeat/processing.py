@@ -74,6 +74,9 @@ def process_video(video_path):
 
     #Plot frequency
     plt.plot(t, freqs)
+    plt.xlabel("Time (s)")
+    plt.ylabel("Heart rate (BPM)")
+    plt.title(video_path)
     plt.show()
    
     
