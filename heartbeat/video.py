@@ -22,6 +22,7 @@ def calculate_brightness(video_path):
     frames = video.get(cv2.CAP_PROP_FRAME_COUNT)
     count = 0
 
+    print("Calculating brightness")
     print("Processed {}% of {}".format((10-progress)*10, video_path))
     while(video.isOpened()):
         #Get video frame
