@@ -46,4 +46,3 @@ def calculate_brightness(video_path):
     video.release()
 
     return brightness, FPS
-
