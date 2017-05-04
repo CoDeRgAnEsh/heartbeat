@@ -7,6 +7,11 @@ def calculate_brightness(video_path):
 
     #Get video
     video = cv2.VideoCapture(video_path)    
+
+    #Check video was opened
+    if(not video.isOpened()):
+        raise FileNotFoundError("Failed to open '{}'".format(video_path))
+
     #Get video FPS
     FPS = video.get(cv2.CAP_PROP_FPS)       
     #Set brightness empty initially
