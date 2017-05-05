@@ -73,7 +73,6 @@ def process_video(video_path):
     print("Plotting heart rate")
 
     #Plot frequency
-    print(freqs)
     plt.plot(t, freqs)
     plt.xlabel("Time (s)")
     plt.ylabel("Heart rate (BPM)")
