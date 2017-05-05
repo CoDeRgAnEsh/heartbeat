@@ -1,0 +1,10 @@
+#python files
+*.pyc
+__pycache__
+.cache
+
+#data folder
+data/
+
+#VIM files
+*.swp
