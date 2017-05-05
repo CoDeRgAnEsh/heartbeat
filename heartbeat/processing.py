@@ -12,7 +12,7 @@ def filter_brightness(brightness, FPS):
     BPM_L = 40
     BPM_H = 230
     #Set filter stabilization time in seconds
-    FILTER_STABILIZATION_TIME = 0
+    FILTER_STABILIZATION_TIME = 1
     #Create a digital butterworth filter (frequencies are normalized, 1 corresponds to half the sampling rate)
     b, a = signal.butter(2, [(BPM_L/60)/FPS*2, (BPM_H/60)/FPS*2], 'bandpass')
     #Apply filter
@@ -47,7 +47,7 @@ def process_brightness(brightness, window, step, inc = 1):
 
     #Calculate frequencies with a sliding window
     while(i+window <= brightness.shape[0]):
-        f = find_peak(FFT(brightness[i:i+window], inc))
+        f = find_peak(FFT(brightness[i:i+window]*signal.hann(window), inc))
         freqs.append(f/inc/window)
         i += step
 
@@ -73,6 +73,7 @@ def process_video(video_path):
     print("Plotting heart rate")
 
     #Plot frequency
+    print(freqs)
     plt.plot(t, freqs)
     plt.xlabel("Time (s)")
     plt.ylabel("Heart rate (BPM)")
