@@ -1,7 +1,7 @@
 # Heartbeat
 **Heartbeat** is a software to measure heart rate using a camera.
 
-Based on ["Measuring heart rate with a smartphone camera"](http://www.ignaciomellado.es/blog/Measuring-heart-rate-with-a-smartphone-camera).
+Based on ["Measuring heart rate with a smartphone camera"](http://www.ignaciomellado.es/blog/Measuring-heart-rate-with-a-smartphone-camera). [Source code](https://github.com/uavster/Video2HeartRate).
 
 ## Introduction
 
@@ -39,7 +39,3 @@ There is a sample video inside the `data/` folder
 You may want to downscale your video before running **Heartbeat** to improve performance. High resolutions are not required for **Heartbeat** to work, 320x240 is sufficient.
 
 You can use tools like ffmpeg, mencoder, avconv, VLC Media Player, etc. to downscale a video.
-
-## Screenshots
-### Output of sample video
-![Sample video output](https://s8.postimg.org/s3bwolytx/Screenshot_from_2017-05-04_22-36-43.png)
